@@ -49,7 +49,7 @@ func main() {
 			Usage:   "List Member",
 			Flags:   []cli.Flag{},
 			Action: func(ctx *cli.Context) error {
-				buf, err := ioutil.ReadFile("data/members.toml")
+				buf, err := dataMembersTomlBytes()
 				if err != nil {
 					return err
 				}
