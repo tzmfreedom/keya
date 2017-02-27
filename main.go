@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strings"
 
@@ -75,7 +74,7 @@ func main() {
 			Usage:   "List Song",
 			Flags:   []cli.Flag{},
 			Action: func(ctx *cli.Context) error {
-				buf, err := ioutil.ReadFile("data/songs.toml")
+				buf, err := dataSongsTomlBytes()
 				if err != nil {
 					return err
 				}
