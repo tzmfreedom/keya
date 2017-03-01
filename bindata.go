@@ -89,7 +89,7 @@ func dataMembersToml() (*asset, error) {
 	return a, nil
 }
 
-var _dataSongsToml = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x01\x00\x00\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00")
+var _dataSongsToml = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x64\xcb\x31\x0a\x82\x60\x14\xc0\xf1\xfd\x9d\xe2\xc3\x1b\x54\xb3\x27\x11\x87\x86\x68\x4a\x07\x4f\xf0\xde\x93\x08\x72\xad\x86\xa0\xa5\x20\xb0\xa0\x41\x02\xb1\xe8\x32\x7f\xa9\x6b\xb4\x15\xd4\x01\x7e\x49\x52\xe4\xd9\xb4\x48\x53\xc9\xf2\x10\x87\x81\x64\xe3\xd9\x24\xc4\x21\xc2\xae\xd8\x01\x3f\xe3\x0d\xbe\xc0\x77\x58\x8b\x1f\xf1\x1a\x9f\x63\x7b\xfc\x1e\x89\xfc\xf8\xe1\xc7\xf7\xed\xfa\xb5\xaa\xd0\x13\x7a\x79\x96\x5b\x74\x83\x2e\xd1\x1a\x2d\xff\xd9\xe8\xcb\xba\xaa\xef\x3a\xec\x86\x3d\xf0\x26\x12\x79\x07\x00\x00\xff\xff\x10\x4f\x04\x78\xa2\x00\x00\x00")
 
 func dataSongsTomlBytes() ([]byte, error) {
 	return bindataRead(
@@ -104,7 +104,7 @@ func dataSongsToml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "data/songs.toml", size: 0, mode: os.FileMode(420), modTime: time.Unix(1488117415, 0)}
+	info := bindataFileInfo{name: "data/songs.toml", size: 162, mode: os.FileMode(420), modTime: time.Unix(1488377474, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -162,7 +162,7 @@ func AssetNames() []string {
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
 	"data/members.toml": dataMembersToml,
-	"data/songs.toml":   dataSongsToml,
+	"data/songs.toml": dataSongsToml,
 }
 
 // AssetDir returns the file names below a certain
@@ -204,11 +204,10 @@ type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
 }
-
 var _bintree = &bintree{nil, map[string]*bintree{
 	"data": &bintree{nil, map[string]*bintree{
 		"members.toml": &bintree{dataMembersToml, map[string]*bintree{}},
-		"songs.toml":   &bintree{dataSongsToml, map[string]*bintree{}},
+		"songs.toml": &bintree{dataSongsToml, map[string]*bintree{}},
 	}},
 }}
 
@@ -258,3 +257,4 @@ func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
+
